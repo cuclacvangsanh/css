@@ -1,0 +1,370 @@
+body {
+    background-color: #fafafa; /* Instagram background */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* System fonts */
+    color: #262626;
+}
+
+.container-fluid {
+    padding-top: 20px; /* Adjust top padding */
+}
+
+.card {
+    border: 1px solid #dbdbdb; /* Lighter border */
+    border-radius: 8px; /* Slightly softer corners */
+    background-color: #ffffff; /* White background */
+    margin-bottom: 24px; /* Increased spacing between posts */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); /* Subtle shadow */
+}
+
+.sidebar-fixed {
+    position: sticky;
+    top: 20px;
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #dbdbdb; /* Add separator */
+    padding-right: 15px;
+}
+
+.site-logo h4 {
+    color: #262626;
+    font-weight: 600; /* Bolder logo */
+}
+
+.list-group-item {
+    border: none !important; /* Remove default borders */
+}
+
+.instagram-nav-item {
+    border-radius: 8px;
+    margin-bottom: 8px; /* More spacing */
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out; /* Smooth transitions */
+    color: #262626;
+    padding: 10px 15px; /* Adjust padding */
+}
+
+.instagram-nav-item:hover {
+    background-color: #f0f0f0; /* Lighter hover */
+    color: #262626;
+    transform: translateX(2px); /* Slight move on hover */
+}
+
+.instagram-nav-item.active {
+    background-color: #efefef;
+    font-weight: 600; /* Bold active item */
+}
+
+.instagram-nav-item i {
+    color: #262626;
+    width: 20px; /* Ensure icons align */
+    text-align: center;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-item i.fa-edit {
+    color: #0095f6;
+}
+
+.dropdown-item i.fa-trash {
+    color: #ed4956;
+}
+
+.edit-success,
+.delete-success,
+.username-change-success { /* Combined styles for notifications */
+    position: fixed;
+    top: 80px; /* Lower position */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(38, 38, 38, 0.95); /* Slightly darker */
+    color: white;
+    padding: 12px 24px; /* More padding */
+    border-radius: 8px; /* Rounded corners */
+    z-index: 1060; /* Ensure visibility */
+    display: none;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.stories-container {
+    /* Styles for stories if implemented */
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+}
+
+.stories-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.story-item {
+    display: inline-block; /* Align stories horizontally */
+    text-align: center;
+    margin: 0 8px;
+    vertical-align: top;
+}
+
+.story-circle {
+    width: 66px; /* Slightly smaller */
+    height: 66px;
+    padding: 2px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-radius: 50%;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: inline-block; /* Ensure proper alignment */
+}
+
+.story-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #fff; /* Slightly thinner white border */
+    border-radius: 50%;
+}
+
+.story-item small {
+    display: block; /* Ensure name is below circle */
+    font-size: 12px;
+    color: #262626;
+    overflow: hidden;
+        text-overflow: ellipsis;
+    max-width: 66px;
+}
+
+.post-card {
+    margin-bottom: 24px; /* Consistent spacing */
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    box-shadow: none; /* Remove individual shadow, rely on border */
+    background-color: #fff;
+}
+
+.post-header {
+    padding: 14px 16px; /* Adjust padding */
+    border-bottom: 1px solid #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+}
+
+.post-user img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px; /* More space */
+}
+
+.post-user .fw-bold {
+    font-size: 14px;
+    color: #262626;
+}
+
+.post-content {
+    padding: 0; /* Remove padding */
+}
+
+.post-image {
+    width: 100%;
+    max-height: 75vh; /* Limit image height relative to viewport */
+    object-fit: cover; /* Ensure image covers the area */
+    display: block; /* Remove extra space below image */
+}
+
+.post-actions {
+    padding: 8px 16px; /* Adjust padding */
+}
+
+.post-actions .btn i {
+    font-size: 24px; /* Larger icons */
+    transition: transform 0.1s ease-in-out;
+}
+.post-actions .btn:hover i {
+    transform: scale(1.1);
+}
+
+.post-likes {
+    padding: 0 16px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.post-caption {
+    padding: 0 16px 10px; /* Adjust padding */
+    font-size: 14px;
+    line-height: 1.4;
+}
+.post-caption .fw-bold {
+     margin-right: 5px;
+}
+
+
+.post-time {
+    padding: 0 16px 12px;
+    color: #8e8e8e;
+    font-size: 10px; /* Smaller timestamp */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.comment-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #efefef;
+    font-size: 14px;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+.comment-item img {
+    width: 32px; height: 32px;
+}
+
+.btn-instagram { /* General primary button style */
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 16px; /* Adjust padding */
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-instagram:hover {
+    background-color: #0077cc; /* Darker hover */
+    color: white;
+}
+
+.btn-secondary {
+     border-radius: 4px;
+     padding: 7px 16px;
+     font-size: 14px;
+     font-weight: 600;
+}
+
+/* Like button specific */
+.like-button i {
+    color: #262626; /* Default heart color */
+}
+.like-button.active i {
+    color: #ed4956 !important; /* Red when liked */
+    font-weight: 900;
+
+}
+.like-button.active:hover i {
+     color: #ed4956 !important;
+}
+
+
+.heart-animation {
+    animation: heartBeat 0.5s ease-in-out;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.modal-header {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 16px 20px;
+}
+.modal-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+.modal-body {
+    padding: 20px;
+}
+.modal-footer {
+    border-top: 1px solid #dbdbdb;
+    padding: 12px 20px;
+    background-color: #f8f9fa; /* Slight background tint */
+}
+
+#media-preview img, #edit-media-preview img {
+    max-height: 300px;
+    border-radius: 6px;
+    border: 1px solid #efefef;
+}
+
+#comments-container {
+    max-height: 400px; /* Limit height */
+    overflow-y: auto; /* Add scrollbar */
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+#comment-input {
+    border-right: none;
+    border-radius: 20px 0 0 20px; /* Rounded input left */
+    padding: 10px 15px;
+    font-size: 14px;
+}
+#comment-input:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+#commentModal .input-group .btn {
+    border-radius: 0 20px 20px 0; /* Rounded button right */
+    padding: 10px 15px;
+}
+
+
+#posts-container {
+    max-width: 614px; /* Standard Instagram post width */
+    margin: 0 auto;
+}
+
+@media (max-width: 991.98px) { /* Adjustments for smaller screens */
+    .sidebar-fixed {
+            display: none; /* Hide sidebar on medium screens and below */
+        }
+    #posts-container {
+        max-width: 100%;
+        padding: 0 15px; /* Add padding on smaller screens */
+    }
+    .post-card {
+        border-left: none;
+        border-right: none;
+        border-radius: 0; /* Remove border radius on mobile for edge-to-edge */
+    }
+}
+
+@media (max-width: 767.98px) {
+     .post-image {
+        max-height: 60vh; /* Adjust max height for smaller screens */
+    }
+    .modal-dialog {
+        margin: 10px; /* Reduce modal margin */
+    }
+}
